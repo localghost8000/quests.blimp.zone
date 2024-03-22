@@ -1,0 +1,92 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  @font-face {
+    font-family: "Good Girl";
+    font-weight: 400;
+    src: url(/font/GoodGirl-Regular.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Editorial New";
+    font-weight: 400;
+    font-style: normal;
+    src: url(/font/PPEditorialNew-Light.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Editorial New";
+    font-weight: 400;
+    font-style: italic;
+    src: url(/font/PPEditorialNew-LightItalic.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Supply Sans";
+    font-weight: 400;
+    src: url(/font/PPSupplySans-Ultralight.woff2) format("woff2");
+  }
+}
+
+@layer components {
+  .blimpo-container {
+    perspective: 1000px;
+  }
+  
+  .blimpo {
+    animation: rotating 2000ms linear infinite;
+    transform-style: preserve-3d;
+  }
+
+  /* .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 20s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  } */
+  
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+  }
+  
+  @keyframes rotating {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .text::selection {
+    background: #ff97b6;
+    color: #0000ff;
+  }
+
+  .marquee-content {
+    animation: scrollMarquee 60s linear infinite;
+  }
+
+  .gradient {
+    background: linear-gradient(
+      131.75deg,
+      #d9d9d9 2.88%,
+      rgba(217, 217, 217, 0) 42.41%
+    );
+  }
+}
